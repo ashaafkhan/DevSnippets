@@ -29,23 +29,23 @@ The application runs an embedded **SQLite** instance (`devsnippets.db`) with for
 
 ```mermaid
 erDiagram
-    snippets ||--o{ attached_files : "has attachments"
+    snippets ||--o{ attachedFiles : "has attachments"
     snippets {
-        INTEGER id PK
-        TEXT title
-        TEXT code
-        TEXT language
-        TEXT tags
-        INTEGER is_favorite
-        TEXT created_at
-        TEXT updated_at
+        int id PK
+        string title
+        string code
+        string language
+        string tags
+        int is_favorite
+        string created_at
+        string updated_at
     }
-    attached_files {
-        INTEGER id PK
-        INTEGER snippet_id FK
-        TEXT file_uri
-        TEXT file_name
-        TEXT file_type
+    attachedFiles {
+        int id PK
+        int snippet_id FK
+        string file_uri
+        string file_name
+        string file_type
     }
 ```
 
@@ -83,3 +83,25 @@ Files are organized within the application's local sandbox (`FileSystem.document
 - `documentDirectory/templates/` — Downloaded code template files available for reuse.
 - `documentDirectory/exports/` — Cached files generated during single or bulk exports.
 - `documentDirectory/screenshots/` — Temp screenshots images directory.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have **Node.js** installed on your system.
+
+### Run Instructions
+
+1. Install the npm dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the Expo development server:
+   ```bash
+   npx expo start
+   ```
+
+3. Scan the QR code using the **Expo Go** app on your physical iOS or Android device.
